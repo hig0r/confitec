@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Confitec.Entities;
 using Confitec.Enums;
 using Confitec.Infra;
+using Confitec.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -48,6 +49,7 @@ namespace Confitec
                 });
 
             services.AddDbContext<ConfitecDbContext>();
+            services.AddScoped<IUsuariosService, UsuariosService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
