@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
+import { HttpClientModule } from '@angular/common/http';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -23,7 +24,8 @@ registerLocaleData(ptBr);
     BrowserAnimationsModule,
     MatToolbarModule,
     ReactiveFormsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
