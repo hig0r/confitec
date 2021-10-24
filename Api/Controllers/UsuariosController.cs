@@ -23,6 +23,12 @@ namespace Confitec.Controllers
             var usuarios = await _usuariosService.Listar();
             return Ok(usuarios);
         }
+        
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await _usuariosService.Obter(id));
+        }
 
         [HttpPost]
         public async Task<IActionResult> Post(NovoUsuarioDto dto)

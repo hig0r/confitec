@@ -16,7 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   { path: '', component: UsuariosComponent },
-  { path: 'novo', component: CriarEditarUsuarioComponent }
+  { path: 'novo', component: CriarEditarUsuarioComponent },
+  { path: ':id/editar', component: CriarEditarUsuarioComponent }
 ];
 
 @NgModule({

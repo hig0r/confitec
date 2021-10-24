@@ -14,11 +14,19 @@ export class UsuariosService {
     return this.http.get<Usuario[]>('/api/usuarios');
   }
 
+  obterPorId(id: number) {
+    return this.http.get<Usuario>(`/api/usuarios/${ id }`);
+  }
+
   novo(usuario: any) {
     return this.http.post<Usuario>('/api/usuarios', usuario);
   }
 
+  alterar(id: number, usuario: Usuario) {
+    return this.http.put<Usuario>(`/api/usuarios/${ id }`, usuario);
+  }
+
   excluir(id: number) {
-    return this.http.delete(`/api/usuarios/${id}`);
+    return this.http.delete(`/api/usuarios/${ id }`);
   }
 }

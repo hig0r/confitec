@@ -22,6 +22,11 @@ namespace Confitec.Services
             return await _dbContext.Usuarios.ToListAsync();
         }
 
+        public async Task<Usuario> Obter(int id)
+        {
+            return await _dbContext.Usuarios.FindAsync(id);
+        }
+
         public async Task<Usuario> Adicionar(NovoUsuarioDto dto)
         {
             var usuario = dto.Adapt<Usuario>();
