@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
@@ -16,9 +21,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    ReactiveFormsModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
