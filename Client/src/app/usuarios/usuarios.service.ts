@@ -10,6 +10,10 @@ export class UsuariosService {
   constructor(private http: HttpClient) {
   }
 
+  obter() {
+    return this.http.get<Usuario[]>('/api/usuarios');
+  }
+
   novo(usuario: any) {
     return this.http.post<Usuario>('/api/usuarios', usuario);
   }

@@ -8,14 +8,20 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { UsuariosComponent } from './usuarios.component';
+import { MatTableModule } from '@angular/material/table';
+import { EscolaridadePipe } from './escolaridade.pipe';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
+  { path: '', component: UsuariosComponent },
   { path: 'novo', component: CriarEditarUsuarioComponent }
 ];
 
 @NgModule({
   declarations: [
-    CriarEditarUsuarioComponent
+    CriarEditarUsuarioComponent,
+    UsuariosComponent,
     EscolaridadePipe
   ],
   imports: [
@@ -26,7 +32,9 @@ const routes: Routes = [
     MatSelectModule,
     MatDatepickerModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    FlexLayoutModule
   ]
 })
 export class UsuariosModule {

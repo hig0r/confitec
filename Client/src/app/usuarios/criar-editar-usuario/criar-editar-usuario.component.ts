@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { escolaridades, escolaridadesNomes } from '../usuario.model';
+import { escolaridades} from '../usuario.model';
 import { UsuariosService } from '../usuarios.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -12,7 +12,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CriarEditarUsuarioComponent implements OnInit {
   form: FormGroup;
   escolaridades = escolaridades;
-  escolaridadesNomes = escolaridadesNomes;
 
   constructor(fb: FormBuilder, private usuariosService: UsuariosService, private snackBar: MatSnackBar) {
     this.form = fb.group({

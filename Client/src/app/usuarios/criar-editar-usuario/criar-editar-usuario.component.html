@@ -24,7 +24,7 @@
     <mat-form-field>
       <mat-label>Escolaridade</mat-label>
       <mat-select formControlName="escolaridade">
-        <mat-option *ngFor="let e of escolaridades; let i = index" [value]="e">{{ escolaridadesNomes[i] }}</mat-option>
+        <mat-option *ngFor="let e of escolaridades; let i = index" [value]="e">{{ e | escolaridade }}</mat-option>
       </mat-select>
     </mat-form-field>
     <button color="primary" mat-flat-button [disabled]="form.invalid">Enviar</button>
