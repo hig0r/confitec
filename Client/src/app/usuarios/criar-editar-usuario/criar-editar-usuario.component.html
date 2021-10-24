@@ -1,32 +1,39 @@
 <div class="container">
   <h1>{{ editando ? 'Editar' : 'Criar' }} usuário</h1>
   <form [formGroup]="form" (ngSubmit)="enviar()">
-    <mat-form-field>
-      <mat-label>Nome</mat-label>
-      <input matInput formControlName="nome"/>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Sobrenome</mat-label>
-      <input matInput formControlName="sobrenome"/>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input type="email" matInput formControlName="email"/>
-      <mat-error *ngIf="email.errors?.email">E-mail inválido</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Data de nascimento</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="dataNascimento">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-      <mat-error *ngIf="dataNascimento.errors?.dataInvalida">Data de nascimento nao pode ser maior que hoje</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Escolaridade</mat-label>
-      <mat-select formControlName="escolaridade">
-        <mat-option *ngFor="let e of escolaridades; let i = index" [value]="e">{{ e | escolaridade }}</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div fxLayout="row" fxLayoutGap="10px">
+
+      <mat-form-field fxFlex>
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome"/>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <mat-label>Sobrenome</mat-label>
+        <input matInput formControlName="sobrenome"/>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutGap="10px">
+      <mat-form-field fxFlex="50">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email"/>
+        <mat-error *ngIf="email.errors?.email">E-mail inválido</mat-error>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dataNascimento">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="dataNascimento.errors?.dataInvalida">Data de nascimento nao pode ser maior que hoje</mat-error>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <mat-label>Escolaridade</mat-label>
+        <mat-select formControlName="escolaridade">
+          <mat-option *ngFor="let e of escolaridades" [value]="e">{{ e | escolaridade }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
     <button color="primary" mat-flat-button [disabled]="form.invalid">Enviar</button>
   </form>
 </div>
