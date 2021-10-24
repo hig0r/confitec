@@ -12,6 +12,7 @@ import { UsuariosComponent } from './usuarios.component';
 import { MatTableModule } from '@angular/material/table';
 import { EscolaridadePipe } from './escolaridade.pipe';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   { path: '', component: UsuariosComponent },
@@ -34,7 +35,8 @@ const routes: Routes = [
     MatButtonModule,
     MatSnackBarModule,
     MatTableModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatIconModule
   ]
 })
 export class UsuariosModule {

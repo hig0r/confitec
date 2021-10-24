@@ -17,4 +17,8 @@ export class UsuariosService {
   novo(usuario: any) {
     return this.http.post<Usuario>('/api/usuarios', usuario);
   }
+
+  excluir(id: number) {
+    return this.http.delete(`/api/usuarios/${id}`);
+  }
 }
